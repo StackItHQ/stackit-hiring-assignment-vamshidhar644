@@ -12,13 +12,13 @@ const CheckColumns = ({ csvData, selectedColumns, toggleColumnSelection }) => {
             key={columnName}
             className={selectedColumns.includes(columnName) ? 'checked' : ''}
           >
-            <label class="container">
+            <label className="container">
               <input
                 type="checkbox"
                 checked={selectedColumns.includes(columnName)}
                 onChange={() => toggleColumnSelection(columnName)}
               />
-              <div class="checkmark"></div>
+              <div className="checkmark"></div>
               {columnName}
             </label>
           </li>
