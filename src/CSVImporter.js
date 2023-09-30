@@ -72,7 +72,6 @@ const CSVImporter = () => {
           csvData={csvData}
           selectedColumns={selectedColumns}
           toggleColumnSelection={toggleColumnSelection}
-          togg
         />
       )}
 
