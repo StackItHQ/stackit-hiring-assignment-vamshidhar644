@@ -1,3 +1,4 @@
+/* eslint-disable use-isnan */
 import React, { useEffect, useState } from 'react';
 import './Filter.css';
 
@@ -7,32 +8,49 @@ const Filter = ({ csvData, selectedColumns, handleFilter }) => {
   const [filterType, setFilterType] = useState('range'); // or 'substring'
   const [filterValue, setFilterValue] = useState('');
 
+  const [from, setFrom] = useState(0);
+  const [to, setTo] = useState(0);
+
+  // console.log(filteredData);
+  // console.log(parseInt(from));
+
   useEffect(() => {
-    // Filter data based on user input
-    if (selectedColumn && filterValue !== '') {
+    if (selectedColumn) {
       const filtered = csvData.filter((row) => {
         const cellValue = row[selectedColumn];
-        if (typeof cellValue === 'number' && filterType === 'range') {
-          // Filter by range for numeric columns
-          return (
-            cellValue >= parseInt(filterValue.split('-')[0]) &&
-            cellValue <= parseInt(filterValue.split('-')[1])
-          );
+        // console.log(cellValue);
+        if (filterType === 'range') {
+          const minValue = parseInt(from);
+          const maxValue = parseInt(to);
+
+          // console.log(minValue, maxValue);
+          return cellValue >= minValue && cellValue <= maxValue;
         } else if (
           typeof cellValue === 'string' &&
           filterType === 'substring'
         ) {
-          // Filter by substring for string columns
           return cellValue.includes(filterValue);
-        } else if (typeof cellValue === 'string' && filterType === 'date') {
-          // Implement date filtering logic here
-          // You may need a date library like 'date-fns'
         }
         return false;
       });
+      // console.log(filtered);
       setFilteredData(filtered);
     }
-  }, [filterValue]);
+  }, [filterValue, from, to]);
+
+  useEffect(() => {
+    console.log('filteredData:', filteredData);
+    console.log('filterValue:', filterValue);
+    console.log('from:', from);
+    console.log('to:', to);
+
+    if (filterValue === '' && from === '' && to === '') {
+      handleFilter(csvData);
+    } else {
+      // console.log(filteredData);
+      handleFilter(filteredData ? filteredData : false);
+    }
+  }, [filteredData, filterValue, from, to]);
 
   return (
     <div className="filter__container">
@@ -49,13 +67,26 @@ const Filter = ({ csvData, selectedColumns, handleFilter }) => {
         <option value="substring">Filter by Substring</option>
         {/* Add more filter types as needed */}
       </select>
-      <input
-        type="text"
-        placeholder={filterType === 'range' ? 'e.g., 10-20' : 'Filter Value'}
-        onChange={(e) => setFilterValue(e.target.value)}
-      />
-
-      <div onClick={() => handleFilter(filteredData)}>FILTER</div>
+      {filterType === 'substring' ? (
+        <input
+          type="text"
+          placeholder="e.g., 10-20"
+          onChange={(e) => setFilterValue(e.target.value)}
+        />
+      ) : (
+        <>
+          <input
+            type="number"
+            placeholder="from"
+            onChange={(e) => setFrom(e.target.value)}
+          />
+          <input
+            type="number"
+            placeholder="to"
+            onChange={(e) => setTo(e.target.value)}
+          />
+        </>
+      )}
     </div>
   );
 };

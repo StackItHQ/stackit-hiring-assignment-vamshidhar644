@@ -9,6 +9,8 @@ const CSVImporter = () => {
   const [csvData, setCsvData] = useState(null);
   const [selectedColumns, setSelectedColumns] = useState([]);
 
+  const [filteredData, setFilteredData] = useState([]);
+
   const onDrop = (acceptedFiles) => {
     const file = acceptedFiles[0];
 
@@ -35,7 +37,7 @@ const CSVImporter = () => {
         },
       });
     };
-
+    // setFilteredData(csvData);
     reader.readAsText(file);
   };
 
@@ -53,7 +55,9 @@ const CSVImporter = () => {
   });
 
   const handleFilter = (data) => {
-    setCsvData(data);
+    if (data) {
+      setFilteredData(data);
+    }
   };
 
   return (
@@ -80,12 +84,14 @@ const CSVImporter = () => {
         />
       )}
 
-      {csvData && csvData.length > 0 && (
+      {csvData && csvData.length > 0 ? (
         <DisplayTable
           selectedColumns={selectedColumns}
-          csvData={csvData}
+          csvData={filteredData.length > 0 ? filteredData : csvData}
           toggleColumnSelection={toggleColumnSelection}
         />
+      ) : (
+        'No data'
       )}
     </div>
   );
