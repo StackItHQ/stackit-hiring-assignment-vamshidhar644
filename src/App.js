@@ -1,5 +1,5 @@
 import './App.css';
-import CSVImporter from './components/CSVImporter';
+import CSVImporter from './CSVImporter';
 
 function App() {
   return (

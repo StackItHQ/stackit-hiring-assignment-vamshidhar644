@@ -2,7 +2,7 @@ import React from 'react';
 
 const DisplayTable = ({ selectedColumns, csvData }) => {
   return (
-    <div>
+    <div className="table__container">
       <h2>CSV Data</h2>
       <table>
         <thead>

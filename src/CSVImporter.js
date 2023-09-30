@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import Papa from 'papaparse';
-import DisplayTable from './DisplayTable';
+import DisplayTable from './components/DisplayTable';
+import CheckColumns from './components/CheckColumns';
 
 const CSVImporter = () => {
   const [csvData, setCsvData] = useState(null);
@@ -12,6 +13,7 @@ const CSVImporter = () => {
 
     // Read the CSV file
     const reader = new FileReader();
+
     reader.onload = (event) => {
       const csvText = event.target.result;
 
@@ -57,27 +59,20 @@ const CSVImporter = () => {
       </div>
 
       {csvData && csvData.length > 0 && (
-        <DisplayTable selectedColumns={selectedColumns} csvData={csvData} />
+        <CheckColumns
+          csvData={csvData}
+          selectedColumns={selectedColumns}
+          toggleColumnSelection={toggleColumnSelection}
+          togg
+        />
       )}
-      
+
       {csvData && csvData.length > 0 && (
-        <div>
-          <h2>Select Columns to Import</h2>
-          <ul>
-            {Object.keys(csvData[0] || {}).map((columnName) => (
-              <li key={columnName}>
-                <label>
-                  <input
-                    type="checkbox"
-                    checked={selectedColumns.includes(columnName)}
-                    onChange={() => toggleColumnSelection(columnName)}
-                  />
-                  {columnName}
-                </label>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <DisplayTable
+          selectedColumns={selectedColumns}
+          csvData={csvData}
+          toggleColumnSelection={toggleColumnSelection}
+        />
       )}
     </div>
   );
