@@ -1,61 +1,70 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/_IojtdoU)
-# StackIt Hiring Assignment
+# Getting Started with Create React App
 
-### Welcome to StackIt's hiring assignment! 🚀
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-**If you didn't get here through github classroom, are you sure you're supposed to be here? 🤨**
+## Available Scripts
 
+In the project directory, you can run:
 
-We are glad to have you here, but before you read what you're going to beat your head over for the next few hours (maybe days?), let's get a few things straight:
-- We really appreciate honesty. Don't copy anyone else's assignment, it'll only sabotage your chances :P
-- You're free to use any stack, and library of your choice. Use whatever you can get your hands on, on the internet!
-- We love out of the box solutions. We prefer to call it *Jugaad* 
-- This might be just the first round, but carries the most importance of all. Give your best, and we hope you have a fun time solving this problem.
+### `npm start`
 
-## ✨ **Problem Statement: Crafting a CSV Importer for Google Sheets** ✨
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-**Context**:
-Data analysts around the world 🌍, handle massive amounts of data to derive meaningful insights for their organization 📊. Among the tools they use, Google Sheets 📈 stands out due to its ease of use, accessibility, and collaborative features. However, many analysts have identified a recurring pain point: the cumbersome process of importing CSV files into Google Sheets repeatedly.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-A typical week of an analyst in an e-commerce company 🛒 involves receiving multiple CSV files 📁 containing sales, inventory, customer feedback, and more. The data from these files needs to be meticulously analyzed and presented in the company’s weekly meetings. However, instead of diving directly into analysis, most analysts need to spend an inordinate amount of time just importing and structuring these CSV files into Google Sheets ⏳. This repetitive, time-consuming task reduces the efficiency of these professionals and delays the extraction of crucial insights 😫.
+### `npm test`
 
-**Today, you are going to make their lives better.**
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-**Problem Statement**:
-Make a CSV Importer for Google Sheets that lets users drag and drop CSV files onto the Google Sheet. The moment they drop the CSV file, allow them to select which columns to import 🗂️.
+### `npm run build`
 
-You get brownie points 🍪 if you can make it even easier by allowing them to filter the data as well before importing it into Google Sheets 🔍.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-**Other pointers**:
-- Import to Sheet – After validation and mapping, devise a method to populate the data into a chosen Google Sheet, either appending to existing data or creating a new sheet 📥📋.
-- Optimize for Large Files – Large datasets are common in analytics. Your solution should effectively handle large CSV files (~15MB CSV file) without causing performance issues or prolonged waiting times 📈📦.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## Submission ⏰
-The timeline for this submission is: **9AM, 30th Sept, 2023 - 12PM, 2nd Oct, 2023**
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Some things you might want to take care of:
-- Make use of git and commit your steps!
-- Use good coding practices.
-- Write beautiful and readable code. Well-written code is nothing less than a work of art.
-- Use semantic variable naming.
-- Your code should be organized well in files and folders which is easy to figure out.
-- If there is something happening in your code that is not very intuitive, add some comments.
-- Add to this README at the bottom explaining your approach (brownie points 😋)
+### `npm run eject`
 
-Make sure you finish the assignment a little earlier than this so you have time to make any final changes.
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-Once you're done, make sure you **record a video** showing your project working. The video should **NOT** be longer than 120 seconds. While you record the video, tell us about your biggest blocker, and how you overcame it! Don't be shy, talk us through, we'd love that.
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-We have a checklist at the bottom of this README file, which you should update as your progress with your assignment. It will help us evaluate your project.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-- [ ] My code's working just fine! 🥳
-- [ ] I have recorded a video showing it working and embedded it in the README ▶️
-- [ ] I have tested all the normal working cases 😎
-- [ ] I have even solved some edge cases (brownie points) 💪
-- [ ] I added my very planned-out approach to the problem at the end of this README 📜
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Got Questions❓
-Feel free to check the discussions tab, you might get something of help there. Check out that tab before reaching out to us. Also, did you know, the internet is a great place to explore 😛
+## Learn More
 
-## Developer's Section
-*Add your video here, and your approach to the problem (optional). Leave some comments for us here if you want, we will be reading this :)*
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
