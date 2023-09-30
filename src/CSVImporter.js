@@ -3,6 +3,7 @@ import { useDropzone } from 'react-dropzone';
 import Papa from 'papaparse';
 import DisplayTable from './components/table/DisplayTable';
 import CheckColumns from './components/checkBoxes/CheckColumns';
+import Filter from './components/filter/Filter';
 
 const CSVImporter = () => {
   const [csvData, setCsvData] = useState(null);
@@ -51,6 +52,10 @@ const CSVImporter = () => {
     accept: '.csv',
   });
 
+  const handleFilter = (data) => {
+    setCsvData(data);
+  };
+
   return (
     <div>
       <div {...getRootProps()} className="dropZone">
@@ -64,6 +69,14 @@ const CSVImporter = () => {
           selectedColumns={selectedColumns}
           toggleColumnSelection={toggleColumnSelection}
           togg
+        />
+      )}
+
+      {csvData && csvData.length > 0 && (
+        <Filter
+          csvData={csvData}
+          selectedColumns={selectedColumns}
+          handleFilter={handleFilter}
         />
       )}
 

@@ -4,12 +4,16 @@ import { gapi } from 'gapi-script';
 const DisplayTable = ({ selectedColumns, csvData }) => {
   const [googleSheetId, setGoogleSheetId] = useState(null);
 
+  const apiKey = 'AIzaSyBoPiT6TJPCyMhx9U6MhrdFxEFM2IJq4Qc';
+  const clientId =
+    '133231470260-hh475rmima8krg08ghn5hs0gln3137lr.apps.googleusercontent.com';
+
   const createGoogleSheet = () => {
     gapi.load('client', () => {
       gapi.client
         .init({
-          apiKey: process.env.API_KEY,
-          clientId: process.env.CLIENT_ID,
+          apiKey: apiKey,
+          clientId: clientId,
           discoveryDocs: [
             'https://sheets.googleapis.com/$discovery/rest?version=v4',
           ],
