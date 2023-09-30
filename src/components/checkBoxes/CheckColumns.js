@@ -1,5 +1,4 @@
 import React from 'react';
-import './style.css';
 import './Checkbox.css';
 
 const CheckColumns = ({ csvData, selectedColumns, toggleColumnSelection }) => {

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import Papa from 'papaparse';
-import DisplayTable from './components/DisplayTable';
-import CheckColumns from './components/CheckColumns';
+import DisplayTable from './components/table/DisplayTable';
+import CheckColumns from './components/checkBoxes/CheckColumns';
 
 const CSVImporter = () => {
   const [csvData, setCsvData] = useState(null);

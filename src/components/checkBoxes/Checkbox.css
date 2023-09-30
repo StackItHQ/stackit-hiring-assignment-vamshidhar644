@@ -1,3 +1,29 @@
+.column__selection{
+  padding: 12px;
+}
+
+.column__selection ul{
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  padding: 0px;
+}
+
+.column__selection ul li{
+  /* min-width: 140px; */
+  width: fit-content;
+  border: 1px solid;
+  transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.column__selection ul li.checked {
+  background-color: #e2e2e2; /* Change to the background color you want */
+}
+
+
 /* Hide the default checkbox */
 .container input {
     position: absolute;

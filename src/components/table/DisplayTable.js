@@ -8,9 +8,8 @@ const DisplayTable = ({ selectedColumns, csvData }) => {
     gapi.load('client', () => {
       gapi.client
         .init({
-          apiKey: 'AIzaSyBoPiT6TJPCyMhx9U6MhrdFxEFM2IJq4Qc',
-          clientId:
-            '133231470260-hh475rmima8krg08ghn5hs0gln3137lr.apps.googleusercontent.com',
+          apiKey: process.env.API_KEY,
+          clientId: process.env.CLIENT_ID,
           discoveryDocs: [
             'https://sheets.googleapis.com/$discovery/rest?version=v4',
           ],
@@ -60,46 +59,51 @@ const DisplayTable = ({ selectedColumns, csvData }) => {
         });
     });
   };
-  return (
-    <div className="table__container">
-      <h2>CSV Data</h2>
-      <div>
-        {csvData && selectedColumns.length > 0 && (
-          <button onClick={createGoogleSheet}>Create Google Sheet</button>
-        )}
-        {googleSheetId && (
-          <p>
-            Google Sheet created click on this{' '}
-            <a
-              href={`https://docs.google.com/spreadsheets/d/${googleSheetId}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Link{' '}
-            </a>
-          </p>
-        )}
-      </div>
-      <table>
-        <thead>
-          <tr>
-            {selectedColumns.map((columnName) => (
-              <th key={columnName}>{columnName}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {csvData.map((row, index) => (
-            <tr key={index}>
+
+  if (!csvData) {
+    return;
+  } else {
+    return (
+      <div className="table__container">
+        <h2>CSV Data</h2>
+        <div>
+          {csvData && selectedColumns.length > 0 && (
+            <button onClick={createGoogleSheet}>Create Google Sheet</button>
+          )}
+          {googleSheetId && (
+            <p>
+              Google Sheet created click on this{' '}
+              <a
+                href={`https://docs.google.com/spreadsheets/d/${googleSheetId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Link{' '}
+              </a>
+            </p>
+          )}
+        </div>
+        <table>
+          <thead>
+            <tr>
               {selectedColumns.map((columnName) => (
-                <td key={columnName}>{row[columnName]}</td>
+                <th key={columnName}>{columnName}</th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
+          </thead>
+          <tbody>
+            {csvData.map((row, index) => (
+              <tr key={index}>
+                {selectedColumns.map((columnName) => (
+                  <td key={columnName}>{row[columnName]}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
 };
 
 export default DisplayTable;
