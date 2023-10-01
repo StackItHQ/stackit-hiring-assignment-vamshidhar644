@@ -52,11 +52,11 @@ Once you're done, make sure you **record a video** showing your project working.
 
 We have a checklist at the bottom of this README file, which you should update as your progress with your assignment. It will help us evaluate your project.
 
-- [ ] My code's working just fine! 🥳
-- [ ] I have recorded a video showing it working and embedded it in the README ▶️
-- [ ] I have tested all the normal working cases 😎
-- [ ] I have even solved some edge cases (brownie points) 💪
-- [ ] I added my very planned-out approach to the problem at the end of this README 📜
+- [x] My code's working just fine! 🥳
+- [x] I have recorded a video showing it working and embedded it in the README ▶️
+- [x] I have tested all the normal working cases 😎
+- [x] I have even solved some edge cases (brownie points) 💪
+- [x] I added my very planned-out approach to the problem at the end of this README 📜
 
 ## Got Questions❓
 
@@ -65,3 +65,54 @@ Feel free to check the discussions tab, you might get something of help there. C
 ## Developer's Section
 
 _Add your video here, and your approach to the problem (optional). Leave some comments for us here if you want, we will be reading this :)_
+
+### From my side
+
+## STEPS IN CREATING THE APPLICATION:
+
+**1. Set up your React.js project:**
+
+- Create a new React.js project if you haven't already using tools like Create React App.
+- Set up any necessary dependencies such as `react-dropzone` for drag-and-drop functionality.
+
+**2. Create a component for the CSV importer:**
+
+- Create a React component that will serve as the CSV importer.
+- Implement the drag-and-drop functionality using the `react-dropzone` or similar library.
+- Handle the dropped file in your component's state.
+
+**3. Parse the CSV file:**
+
+- Use a CSV parsing library `papaparse` to parse the uploaded CSV file.
+- Store the parsed data in your component's state.
+
+**4. Display CSV data and column selection:**
+
+- Create a user interface that displays the parsed CSV data in a tabular format.
+- Allow users to select which columns they want to import by adding checkboxes or a column selection UI.
+
+**5. Interact with Google Sheets API:**
+
+- Set up authentication for Google Sheets API. You can use OAuth 2.0 for this.
+- Use the Google Sheets API to create a new Google Sheet or select an existing one.
+
+**6. Map and import data into Google Sheets:**
+
+- Map the selected columns from the parsed CSV data to the corresponding columns in the Google Sheet.
+- Use the Google Sheets API to insert the data into the Google Sheet.
+
+**7. Handle errors and edge cases:**
+
+- Implement error handling to provide feedback to the user in case of any issues during the import process.
+- Handle scenarios such as duplicate data, invalid column selections, or data format issues.
+
+**8. Testing and validation:**
+
+- Thoroughly test your CSV importer with various types of CSV files.
+- Validate that the imported data matches the user's selections.
+
+## VIDEO EXPLANATION
+
+[![VIDEO](https://drive.google.com/file/d/1rTMWj-XO0CbUHtIlB7YqgDfTztjICOXR/view?usp=drive_link)]
+
+I couldn't able to talk about the blockers I faced as it has to be in 120 seconds and since the video above is around 4 minutes 🙃
