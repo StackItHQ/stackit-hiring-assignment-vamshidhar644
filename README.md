@@ -113,6 +113,6 @@ _Add your video here, and your approach to the problem (optional). Leave some co
 
 ## VIDEO EXPLANATION
 
-[![VIDEO](https://drive.google.com/file/d/1rTMWj-XO0CbUHtIlB7YqgDfTztjICOXR/view?usp=drive_link)]
+[![VIDEO](https://drive.google.com/file/d/1rTMWj-XO0CbUHtIlB7YqgDfTztjICOXR/view?usp=drive_link)](https://drive.google.com/file/d/1rTMWj-XO0CbUHtIlB7YqgDfTztjICOXR/view?usp=drive_link)
 
 I couldn't able to talk about the blockers I faced as it has to be in 120 seconds and since the video above is around 4 minutes 🙃
