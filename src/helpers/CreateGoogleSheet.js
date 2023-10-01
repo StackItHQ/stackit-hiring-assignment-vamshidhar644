@@ -4,11 +4,8 @@ import { gapi } from 'gapi-script';
 const CreateGoogleSheet = () => {
   const [googleSheetId, setGoogleSheetId] = useState(null);
 
-  console.log(process.env.REACT_APP_API_KEY);
-
-  const apiKey = 'AIzaSyBoPiT6TJPCyMhx9U6MhrdFxEFM2IJq4Qc';
-  const clientId =
-    '133231470260-hh475rmima8krg08ghn5hs0gln3137lr.apps.googleusercontent.com';
+  const apiKey = process.env.REACT_APP_API_KEY;
+  const clientId = process.env.REACT_APP_CLIENT_ID;
 
   const createGSheet = (selectedColumns, csvData) => {
     gapi.load('client', () => {
