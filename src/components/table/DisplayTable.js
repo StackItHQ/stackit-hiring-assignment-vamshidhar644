@@ -15,7 +15,7 @@ const DisplayTable = ({ selectedColumns, csvData }) => {
     return (
       <div className="table__container">
         <h2>CSV Data</h2>
-        <div>
+        <div className="import__csv">
           {csvData && selectedColumns.length > 0 && (
             <button onClick={createGoogleSheet}>Create Google Sheet</button>
           )}

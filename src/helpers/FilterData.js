@@ -20,10 +20,7 @@ const FilterData = () => {
           const maxValue = parseInt(to);
 
           return cellValue >= minValue && cellValue <= maxValue;
-        } else if (
-          typeof cellValue === 'string' &&
-          filterType === 'substring'
-        ) {
+        } else if (typeof cellValue === 'string' && filterType === 'value') {
           return cellValue.includes(filterValue);
         }
         return false;

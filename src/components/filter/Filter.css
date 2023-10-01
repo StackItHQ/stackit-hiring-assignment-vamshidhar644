@@ -19,7 +19,7 @@
     font-size: 15px;
     min-width: 12rem;
     font-weight: bold;
-    border: 2px solid transparent;
+    border: 1px solid #000;
     border-radius: 4px;
     cursor: pointer;
   }
@@ -53,7 +53,6 @@
   
   .dropdown-content p:focus {
     background-color: #212121;
-    color: #4CAF50;
   }
   
   .select__button:hover .dropdown-content {
@@ -70,4 +69,14 @@
   
 .dropdown-content::-webkit-scrollbar-thumb {
     background-color: #000; /* Set the background color of the scrollbar thumb */
+  }
+
+
+  .filter__container input{
+    padding: 10px;
+    background-color: #ededed;
+    border: 1px solid;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: bold;
   }

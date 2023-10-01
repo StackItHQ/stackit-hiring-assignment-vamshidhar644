@@ -7,7 +7,7 @@ const Filter = ({ csvData, selectedColumns, handleFilter }) => {
   const { dataFiltering, filteredData } = FilterData();
 
   const [selectedColumn, setSelectedColumn] = useState('');
-  const [filterType, setFilterType] = useState('range'); 
+  const [filterType, setFilterType] = useState('range');
   const [filterValue, setFilterValue] = useState('');
 
   const [from, setFrom] = useState(0);
@@ -27,19 +27,29 @@ const Filter = ({ csvData, selectedColumns, handleFilter }) => {
 
   return (
     <div className="filter__container">
-      <select onChange={(e) => setSelectedColumn(e.target.value)}>
-        <option value="">Select a Column</option>
-        {selectedColumns.map((header) => (
-          <option key={header} value={header}>
-            {header}
-          </option>
-        ))}
-      </select>
-      <select onChange={(e) => setFilterType(e.target.value)}>
-        <option value="range">Filter by Range</option>
-        <option value="substring">Filter by Substring</option>
-      </select>
-      {filterType === 'substring' ? (
+      <div className="select__button">
+        <button className="button">
+          {selectedColumn ? selectedColumn : 'Select Column to filter'}
+        </button>
+        <div className="dropdown-content">
+          {selectedColumns.map((column, i) => (
+            <p id="top" key={i} onClick={() => setSelectedColumn(column)}>
+              {column}
+            </p>
+          ))}
+        </div>
+      </div>
+
+      <div className="select__button">
+        <button className="button">
+          {filterType ? filterType : 'Select type to filter'}
+        </button>
+        <div className="dropdown-content">
+          <p onClick={() => setFilterType('range')}>Filter by Range</p>
+          <p onClick={() => setFilterType('value')}>Filter by Value</p>
+        </div>
+      </div>
+      {filterType === 'value' ? (
         <input type="text" onChange={(e) => setFilterValue(e.target.value)} />
       ) : (
         <>
